@@ -1,4 +1,7 @@
 import React from 'react';
+import { Wave } from 'react-animated-text';
+
+
 
 import { Cards, CountryPicker, Chart } from './components';
 import { fetchData } from './api/';
@@ -7,6 +10,8 @@ import styles from './App.module.css';
 import image from './images/image.png';
 
 class App extends React.Component {
+
+  
   state = {
     data: {},
     country: '',
@@ -29,10 +34,14 @@ class App extends React.Component {
 
     return (
       <div className={styles.container}>
-        <img className={styles.image} src={image} alt="COVID-19" />
-        <Cards data={data} />
+       
+       <img className={styles.image} src={image} alt="COVID-19" />
+       <Wave text="powered by © GhaZee" effect="stretch" effectChange={2}/>
+       <Cards data={data} />
+        
         <CountryPicker handleCountryChange={this.handleCountryChange} />
-        <Chart data={data} country={country} /> 
+        <Chart data={data} country={country} />
+         
       </div>
     );
   }

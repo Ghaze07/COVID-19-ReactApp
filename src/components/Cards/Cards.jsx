@@ -44,7 +44,7 @@ import styles from './Cards.module.css';
         <Grid item component={Card} xs={12} md={3} className={cx(styles.card, styles.deaths)}>
             <CardContent>
                 <Wave text="Deaths" effect="stretch" effectChange={2} />  
-                <Typography variant="h5"> 
+                <Typography variant="h5" color='error'> 
                  <CountUp start={0} end={deaths.value} duration={2.5} separator=","/>
                 </Typography>
                 <Typography color="textSecondary">{new Date(lastUpdate).toDateString()}</Typography>
